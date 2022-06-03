@@ -1,6 +1,6 @@
-package com.test.book.springboot;
+package com.test.book.springboot.web;
 
-import com.test.book.springboot.web.HelloController;
+import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +25,20 @@ public class HelloControllerTest {
         mvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
+    }
+
+    @Test
+    public void returnHelloDto() throws Exception {
+        String name = "hello";
+        int amount = 1000;
+
+        mvc.perform(
+                get("/hello/dto")
+                        .param("name", name)
+                        .param("amount", String.valueOf(amount))
+                )
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", Matchers.is(name)))
+                .andExpect(jsonPath("$.amount", Matchers.is(amount)));
     }
 }
