@@ -23,15 +23,15 @@ cp $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/
 
 echo "> 현재 구동중인 애플리케이션 pid 확인"
 
-CURRNET_PID=${pgrep -f ${PROJECT_NAME}.*.jar}
+CURRENT_PID=${pgrep -f ${PROJECT_NAME}.*.jar}
 
-echo "> 현재 구동중인 애플리케이션 pid: $CURRNET_PID"
+echo "현재 구동중인 애플리케이션 pid: $CURRENT_PID"
 
-if [ -z "$CURRNET_PID" ]; then
+if [ -z "$CURRENT_PID" ]; then
     echo "> 현재 구동중인 애플리케이션이 없으므로 종료하지 않습니다."
 else
-    echo "> kill -15 $CURRNET_PID"
-    kill -15 $CURRNET_PID
+    echo "> kill -15 $CURRENT_PID"
+    kill -15 $CURRENT_PID
     sleep 5
 fi
 
