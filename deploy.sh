@@ -12,6 +12,10 @@ echo "> Git Pull"
 
 git pull
 
+echo "> Git Ignore Application Properties 파일 복사"
+
+cp /home/ec2-user/app/application-properties/*.properties $REPOSITORY/$PROJECT_NAME/src/main/resources
+
 echo "> 프로젝트 Build 시작"
 
 ./gradlew build
@@ -52,4 +56,4 @@ echo "> JAR Name: $JAR_NAME"
 #/home/ec2-user/app/application-real-db.properties\
 #  -Dspring.profiles.active=real \
 #  $REPOSITORY/$JAR_NAME 2>&1 &
-nohup java -jar -Dspring.config.location=classpath:/application.properties,/home/ec2-user/app/application-oauth.properties,classpath:/application-real.properties,/home/ec2-user/app/application-real-db.properties -Dspring.profiles.active=real $REPOSITORY/$JAR_NAME 2>&1 &
+nohup java -jar -Dspring.profiles.active=real $REPOSITORY/$JAR_NAME 2>&1 &
