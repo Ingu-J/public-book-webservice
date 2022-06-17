@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# deploy.sh copy
+# cp /home/ec2-user/app/step1/public-book-webservice/deploy.sh /home/ec2-user/app/step1/deploy.sh
+
 REPOSITORY=/home/ec2-user/app/step1
 PROJECT_NAME=public-book-webservice
 
