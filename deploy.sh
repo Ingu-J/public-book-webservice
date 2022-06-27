@@ -18,7 +18,7 @@ cp /home/ec2-user/app/application-properties/*.properties $REPOSITORY/$PROJECT_N
 
 echo "> 프로젝트 Build 시작"
 
-./gradlew build
+./gradlew clean build
 
 echo "> step1 디렉토리로 이동"
 
