@@ -3,9 +3,12 @@
 # deploy.sh copy
 # cp /home/ec2-user/app/step3/public-book-webservice/script/deploy.sh /home/ec2-user/app/step3/deploy.sh
 
-echo "> Start ./stop.sh"
-sh ./stop.sh
-echo "> Start ./start.sh"
-sh ./start.sh
-echo "> Start ./health.sh"
-sh ./health.sh
+REPOSITORY=/home/ec2-user/app/step3
+PROJECT_NAME=public-book-webservice
+
+echo "> Start $REPOSITORY/$PROJECT_NAME/stop.sh"
+sh $REPOSITORY/$PROJECT_NAME/stop.sh
+echo "> Start $REPOSITORY/$PROJECT_NAME/start.sh"
+sh $REPOSITORY/$PROJECT_NAME/start.sh
+echo "> Start $REPOSITORY/$PROJECT_NAME/health.sh"
+sh $REPOSITORY/$PROJECT_NAME/health.sh
