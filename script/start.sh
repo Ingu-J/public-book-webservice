@@ -17,6 +17,10 @@ echo "> Git Ignore Application Properties 파일 복사"
 
 cp /home/ec2-user/app/application-properties/*.properties $REPOSITORY/$PROJECT_NAME/src/main/resources
 
+echo "> 기존 Build 파일 제거"
+
+rm $REPOSITORY/$PROJECT_NAME/build/libs/*.jar
+
 echo "> 프로젝트 Build 시작"
 
 ./gradlew build
