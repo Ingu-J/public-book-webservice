@@ -1,7 +1,7 @@
 # 아래 내용은 참고사항이며, 서버의 환경은 다음과 같습니다.
 # OS : Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type
 # nginx version: nginx/1.20.0
-# Line 52 - 57 내용 참고하시기 바랍니다.
+# Line 50 - 59 내용 참고하시기 바랍니다.
 
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
